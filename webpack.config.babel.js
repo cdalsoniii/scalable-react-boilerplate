@@ -16,8 +16,11 @@ const HOST = '0.0.0.0'; // Set to localhost if need be.
 module.exports = {
   devtool: isProduction ? '' : 'cheap-module-eval-source-map',
   entry: {
-    app: path.resolve(ROOT_PATH,'app/src/index'),
-    vender: ['react', 'react-dom']
+    main: [
+      path.resolve(ROOT_PATH, 'app/src/index'),
+      path.resolve(ROOT_PATH, 'app/src/pages/LandingPage')
+    ],
+    vendor: ['react', 'react-dom']
   },
   module: {
     preLoaders: [
