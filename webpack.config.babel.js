@@ -15,13 +15,15 @@ const HOST = '0.0.0.0'; // Set to localhost if need be.
 
 module.exports = {
   devtool: isProduction ? '' : 'cheap-module-eval-source-map',
-  entry: {
+  entry: isProduction ? {
     main: [
       path.resolve(ROOT_PATH, 'app/src/index'),
       path.resolve(ROOT_PATH, 'app/src/pages/LandingPage')
     ],
     vendor: ['react', 'react-dom']
-  },
+  } : [
+    path.resolve(ROOT_PATH,'app/src/index')
+  ],
   module: {
     preLoaders: [
       {
@@ -178,7 +180,7 @@ module.exports = {
       new NpmInstallPlugin(),
       new HtmlwebpackPlugin({
         title: 'Scalable React Boilerplate',
-        template: 'index.html'
+        template: 'config/templates/_index.html'
       })
     ]
 };

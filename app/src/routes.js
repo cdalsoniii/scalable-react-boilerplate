@@ -1,6 +1,6 @@
 /* global System b:true */
 import React from 'react';
-import { Router } from 'react-router/es6';
+import { Router } from 'react-router';
 import { ApolloProvider } from 'react-apollo';
 import store, { history } from './store';
 import client from './apolloClient';

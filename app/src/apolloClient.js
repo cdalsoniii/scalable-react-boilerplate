@@ -8,6 +8,7 @@ const productionUrl = `${baseUrl}graphql`;
 
 const client = new ApolloClient({
   networkInterface: createNetworkInterface(productionUrl),
+  uri: productionUrl,
   initialState: typeof window !== 'undefined' ? window.__APOLLO_STATE__ : null,
   queryTransformer: addTypeName,
 });

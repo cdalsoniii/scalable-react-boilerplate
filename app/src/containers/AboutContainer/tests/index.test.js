@@ -11,7 +11,7 @@ const mockStore = configureMockStore(middlewares);
 
 describe('<About />', () => {
   it('should render with default props', () => {
-    const store = mockStore({ About });
+    const store = mockStore({ about });
     const wrapper = shallow(
       <AboutContainer store={store} />
     );

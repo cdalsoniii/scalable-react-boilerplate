@@ -52,6 +52,7 @@ class LandingContainer extends Component {
           onClose={actions.closeModal}
           isVisible={isShowingModal}
         />
+      HI!
         {isLoading ?
           <Section
             align="center"
