@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import { syncHistoryWithStore, routerActions, routerMiddleware } from 'react-router-redux';
 import thunk from 'redux-thunk';
-import { browserHistory } from 'react-router';
+import { browserHistory } from 'react-router/es6';
 import rootReducer from './reducers';
 import { UserAuthWrapper as userAuthWrapper } from 'redux-auth-wrapper';
 import client from './apolloClient';

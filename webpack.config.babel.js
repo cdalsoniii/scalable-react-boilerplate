@@ -15,9 +15,10 @@ const HOST = '0.0.0.0'; // Set to localhost if need be.
 
 module.exports = {
   devtool: isProduction ? '' : 'cheap-module-eval-source-map',
-  entry: [
-    path.resolve(ROOT_PATH,'app/src/index')
-  ],
+  entry: {
+    app: path.resolve(ROOT_PATH,'app/src/index'),
+    vender: ['react', 'react-dom']
+  },
   module: {
     preLoaders: [
       {
@@ -126,7 +127,7 @@ module.exports = {
       new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',
         children: true,
-        minChunks: 2,
+        minChunks: Infinity,
         async: true,
       }),
       new HtmlwebpackPlugin({
